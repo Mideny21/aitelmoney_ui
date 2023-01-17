@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/painters.dart';
+
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
 
@@ -8,14 +10,42 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 6),
+  _appBar(height) => PreferredSize(
+      preferredSize: Size(MediaQuery.of(context).size.width, height + 250),
+      child: Stack(children: [
+        Container(
+          color: Colors.red,
+          height: 150,
+          width: MediaQuery.of(context).size.width,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12),
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    "airtel",
+                    style: TextStyle(
+                        fontSize: 22.0,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Icon(Icons.alarm, color: Colors.white),
+                      Icon(Icons.notification_add, color: Colors.white)
+                    ],
+                  )
+                ]),
+          ),
+        ),
+        Container(),
+        Positioned(
+          top: 100,
+          left: 5,
+          right: 5,
           child: SizedBox(
-            height: MediaQuery.of(context).size.height * 0.3,
+            height: height + 200,
             child: Stack(
               children: [
                 Positioned(
@@ -23,44 +53,44 @@ class _MainScreenState extends State<MainScreen> {
                   left: 0,
                   child: Card(
                       child: SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.15,
+                    height: 170,
                     width: MediaQuery.of(context).size.width,
                     child: Center(child: Text("Airtel Money")),
                   )),
                 ),
                 Positioned(
-                  bottom: 10,
+                  top: 188,
                   left: 0,
                   child: Card(
                       child: SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.10,
+                    height: 60,
                     width: MediaQuery.of(context).size.width,
                     child: Center(child: Text("Airtel Money")),
                   )),
                 ),
                 Positioned(
-                  top: 124,
+                  top: 172,
                   left: 25,
                   child: CustomPaint(
                     painter: HolderPainter(),
                   ),
                 ),
                 Positioned(
-                  top: 124,
+                  top: 172,
                   right: 55,
                   child: CustomPaint(
                     painter: HolderPainter(),
                   ),
                 ),
                 Positioned(
-                  top: 122,
+                  top: 174,
                   left: 40,
                   child: CustomPaint(
                     painter: RopePainter(),
                   ),
                 ),
                 Positioned(
-                  top: 122,
+                  top: 174,
                   right: 40,
                   child: CustomPaint(
                     painter: RopePainter(),
@@ -70,41 +100,20 @@ class _MainScreenState extends State<MainScreen> {
             ),
           ),
         ),
+      ]));
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: _appBar(AppBar().preferredSize.height),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 6),
+        child: SizedBox(
+          height: MediaQuery.of(context).size.height * 0.3,
+          child: Stack(
+            children: [],
+          ),
+        ),
       ),
     );
-  }
-}
-
-class RopePainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint();
-    paint.color = Colors.grey;
-    paint.strokeWidth = 3;
-    paint.style = PaintingStyle.stroke;
-
-    canvas.drawLine(Offset(0, 0), Offset(0, 32), paint);
-  }
-
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) {
-    return false;
-  }
-}
-
-class HolderPainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint();
-    paint.color = Colors.grey;
-    paint.strokeWidth = 5;
-    paint.style = PaintingStyle.stroke;
-
-    canvas.drawLine(const Offset(0, 0), Offset(30, 0), paint);
-  }
-
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) {
-    return false;
   }
 }
