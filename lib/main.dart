@@ -1,3 +1,4 @@
+import 'package:airtelmoney_ui/utils/navigator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
     SystemChrome.setSystemUIOverlayStyle(
         const SystemUiOverlayStyle(statusBarColor: Colors.red));
     return MaterialApp(
+      navigatorKey: NavigationService.instance.navigationKey,
       debugShowCheckedModeBanner: false,
       title: 'Airtel-Money UI',
       theme: ThemeData(),
