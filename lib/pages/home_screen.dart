@@ -33,44 +33,52 @@ class _HomeScreenState extends State<HomeScreen> {
           SliverList(
             // Use a delegate to build items as they're scrolled on screen.
             delegate: SliverChildListDelegate([
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              ListView(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
                 children: [
-                  Text(
-                    "Mabadiliko",
-                    style: TextStyle(
-                        color: Colors.black54,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Text(
+                        "Mabadiliko",
+                        style: TextStyle(
+                            color: Colors.black54,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16),
+                      ),
+                      Text(
+                        "Tazama zote",
+                        style: TextStyle(color: Colors.blue),
+                      )
+                    ],
                   ),
-                  Text(
-                    "Tazama zote",
-                    style: TextStyle(color: Colors.blue),
-                  )
+                  const ServicePanel(),
+                  const SizedBox(height: 8),
+                  SizedBox(
+                    height: 125,
+                    child: ListView.builder(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        itemCount: 4,
+                        itemBuilder: (context, inde) {
+                          return PromoBox();
+                        }),
+                  ),
+                  const SizedBox(height: 10),
+                  SizedBox(
+                    height: 125,
+                    child: ListView.builder(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        itemCount: 4,
+                        itemBuilder: (context, inde) {
+                          return PromoBox();
+                        }),
+                  ),
                 ],
-              ),
-              const ServicePanel(),
-              const SizedBox(height: 10),
-              SizedBox(
-                height: 125,
-                child: ListView.builder(
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                    itemCount: 4,
-                    itemBuilder: (context, inde) {
-                      return PromoBox();
-                    }),
-              ),
-              const SizedBox(height: 10),
-              SizedBox(
-                height: 125,
-                child: ListView.builder(
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                    itemCount: 4,
-                    itemBuilder: (context, inde) {
-                      return PromoBox();
-                    }),
               )
             ]),
             // Builds 1000 ListTiles
@@ -97,17 +105,20 @@ class PromoBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(right: 10.0),
-      width: MediaQuery.of(context).size.width - 40,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5.0),
-          color: Theme.of(context).primaryColor,
-          image: DecorationImage(
-              image: NetworkImage(
-                'https://images.unsplash.com/photo-1614167156117-c02f3f9f3088?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80',
-              ),
-              fit: BoxFit.cover)),
+    return Material(
+      elevation: 8,
+      child: Container(
+        margin: const EdgeInsets.only(right: 10.0),
+        width: MediaQuery.of(context).size.width - 40,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(5.0),
+            color: Theme.of(context).primaryColor,
+            image: DecorationImage(
+                image: NetworkImage(
+                  'https://images.unsplash.com/photo-1614167156117-c02f3f9f3088?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80',
+                ),
+                fit: BoxFit.cover)),
+      ),
     );
   }
 }

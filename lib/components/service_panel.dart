@@ -15,7 +15,6 @@ class _ServicePanelState extends State<ServicePanel> {
   String dropdownValue = 'Tigo Pesa';
   @override
   Widget build(BuildContext context) {
-    final orientation = MediaQuery.of(context).orientation;
     return GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             mainAxisSpacing: 0,
@@ -23,13 +22,14 @@ class _ServicePanelState extends State<ServicePanel> {
             mainAxisExtent: 100,
             crossAxisCount: 4),
         shrinkWrap: true,
-        physics: const ScrollPhysics(),
+        padding: const EdgeInsets.all(4),
+        physics: const NeverScrollableScrollPhysics(),
         itemCount: services.length,
         itemBuilder: ((context, index) {
           return Padding(
             padding: const EdgeInsets.all(2.0),
             child: Stack(
-              alignment: Alignment.center,
+              // alignment: Alignment.r,
               children: [
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 1.0,
