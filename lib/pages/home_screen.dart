@@ -52,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Text(
                         "Tazama zote",
                         style: TextStyle(color: Colors.blue),
-                      )
+                      ),
                     ],
                   ),
                   const ServicePanel(),
