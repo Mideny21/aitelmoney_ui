@@ -51,65 +51,60 @@ class _TumaPesaScreenState extends State<TumaPesaScreen>
           elevation: 3,
           title: const Text('Tuma Pesa'),
         ),
-        body: SizedBox(
-          height: MediaQuery.of(context).size.height,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text("Kwenda"),
-                TabsSection(
-                  controller: _tabController,
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text("Kwenda"),
+              TabsSection(controller: _tabController),
+              Expanded(
+                child: PageView(
+                  physics: const NeverScrollableScrollPhysics(),
+                  controller: _pageController,
+                  children: <Widget>[
+                    Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Row(
+                            children: [
+                              ...TabbedConstants.sendTabs.map((e) {
+                                return Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 8, vertical: 5),
+                                  child: TabTitleWidget(
+                                    onTap: () {
+                                      setState(() {
+                                        tabsindex = e.index;
+                                        _mtuController.animateToPage(tabsindex,
+                                            duration: const Duration(
+                                                milliseconds: 100),
+                                            curve: Curves.ease);
+                                      });
+                                    },
+                                    title: e.title,
+                                    isSelected: e.index == tabsindex,
+                                  ),
+                                );
+                              })
+                            ],
+                          ),
+                          Expanded(
+                            child: PageView(
+                                physics: const NeverScrollableScrollPhysics(),
+                                controller: _mtuController,
+                                children: <Widget>[
+                                  const NdaniYaNchi(),
+                                  Container(color: Colors.pink)
+                                ]),
+                          )
+                        ]),
+                    const KweBenki()
+                  ],
                 ),
-                Expanded(
-                  child: PageView(
-                    physics: const NeverScrollableScrollPhysics(),
-                    controller: _pageController,
-                    children: <Widget>[
-                      Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Row(
-                              children: [
-                                ...TabbedConstants.sendTabs.map((e) {
-                                  return Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 8, vertical: 5),
-                                    child: TabTitleWidget(
-                                      onTap: () {
-                                        setState(() {
-                                          tabsindex = e.index;
-                                          _mtuController.animateToPage(
-                                              tabsindex,
-                                              duration: const Duration(
-                                                  milliseconds: 100),
-                                              curve: Curves.ease);
-                                        });
-                                      },
-                                      title: e.title,
-                                      isSelected: e.index == tabsindex,
-                                    ),
-                                  );
-                                })
-                              ],
-                            ),
-                            Expanded(
-                              child: PageView(
-                                  physics: const NeverScrollableScrollPhysics(),
-                                  controller: _mtuController,
-                                  children: <Widget>[
-                                    const NdaniYaNchi(),
-                                  ]),
-                            )
-                          ]),
-                      const KweBenki()
-                    ],
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
@@ -128,7 +123,7 @@ class KweBenki extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text("BENKI"),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         Expanded(
           child: GridView.builder(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -150,18 +145,21 @@ class KweBenki extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Container(
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.red.withOpacity(0.1)),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8),
-                          child: services[index]['icon'],
+                      Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Image.asset(
+                          kwendaBenki[index]['icon'],
+                          height: 30,
+                          fit: BoxFit.cover,
                         ),
                       ),
                       const SizedBox(height: 10),
-                      Text(services[index]['name'],
-                          overflow: TextOverflow.ellipsis),
+                      Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: Text(kwendaBenki[index]['name'],
+                            textAlign: TextAlign.center,
+                            overflow: TextOverflow.ellipsis),
+                      ),
                     ],
                   ),
                 );
@@ -188,62 +186,56 @@ class NdaniYaNchi extends StatelessWidget {
           width: double.infinity,
           height: MediaQuery.of(context).size.height * 0.42,
           child: Card(
-              child: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        border: Border.all(color: Colors.grey),
+              child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  border: Border.all(color: Colors.grey),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      InputForm(
+                        title: 'Jina la Mpokeaji au Namba',
+                        hintText: 'Weka jina la Mpokeaji au Namba',
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            InputForm(
-                              title: 'Jina la Mpokeaji au Namba',
-                              hintText: 'Weka jina la Mpokeaji au Namba',
-                            ),
-                            SizedBox(height: 10),
-                            InputForm(
-                              title: 'Ingiza kiasi',
-                              hintText: 'Weka jina la Mpokeaji au Namba',
-                            ),
-                          ],
-                        ),
+                      SizedBox(height: 10),
+                      InputForm(
+                        title: 'Ingiza kiasi',
+                        hintText: 'Weka jina la Mpokeaji au Namba',
                       ),
-                    ),
-                    SizedBox(height: 15),
-                    InputForm(
-                      title: 'maoni_ya hiari (Si Lazima)',
-                      hintText: 'Ingiza maoni',
-                    ),
-                    SizedBox(height: 15),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            Icon(Icons.arrow_back),
-                            Text("Rudi Nyuma")
-                          ],
-                        ),
-                        CustomButton(
-                          height: 40,
-                          tap: () {},
-                          text: 'Endelea',
-                          width: 80,
-                          textColor: Colors.white,
-                          color: Colors.red,
-                        )
-                      ],
-                    )
-                  ]),
-            ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 15),
+              InputForm(
+                title: 'maoni_ya hiari (Si Lazima)',
+                hintText: 'Ingiza maoni',
+              ),
+              SizedBox(height: 15),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [Icon(Icons.arrow_back), Text("Rudi Nyuma")],
+                  ),
+                  CustomButton(
+                    height: 40,
+                    tap: () {},
+                    text: 'Endelea',
+                    width: 80,
+                    textColor: Colors.white,
+                    color: Colors.red,
+                  )
+                ],
+              )
+            ]),
           )),
         ),
       ],

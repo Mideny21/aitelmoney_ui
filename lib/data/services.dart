@@ -81,31 +81,27 @@ List<Map> services = [
 List<Map> kwendaBenki = [
   {
     "name": "ACB",
-    "icon": Icon(Icons.phone_android_outlined,
-        color: AppColors.primaryColor, size: 50),
+    "icon": "assets/images/acb.png",
   },
   {
     "name": "ACTCALAMICRO FINANCE",
-    "icon": Icon(Icons.shopping_cart, color: AppColors.primaryColor, size: 50),
+    "icon": "assets/images/amana.jpg",
   },
   {
     "name": "AKIBA COMMERCIAL BANK",
-    "icon": Icon(Icons.wifi_rounded, color: AppColors.primaryColor, size: 50),
+    "icon": "assets/images/acb.png",
   },
   {
     "name": "AMANA",
-    "icon":
-        Icon(Icons.handshake_outlined, color: AppColors.primaryColor, size: 50),
+    "icon": "assets/images/amana.jpg",
   },
   {
     "name": "AZANIA",
-    "icon":
-        Icon(Icons.add_box_outlined, color: AppColors.primaryColor, size: 50),
+    "icon": "assets/images/azania.png",
   },
   {
     "name": "Absa Bank",
-    "icon":
-        Icon(Icons.add_box_outlined, color: AppColors.primaryColor, size: 50),
+    "icon": "assets/images/absa.jpg",
   }
 ];
 

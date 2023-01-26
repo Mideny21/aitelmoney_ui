@@ -63,7 +63,11 @@ class _TabsSectionState extends State<TabsSection> {
                     Text(
                       "Mtu",
                       style: TextStyle(color: Colors.black),
-                    )
+                    ),
+                    SizedBox(height: 3),
+                    tappeindex == 0
+                        ? Container(color: Colors.red, width: 50, height: 2)
+                        : Container()
                   ])),
         ),
         Container(
@@ -93,7 +97,11 @@ class _TabsSectionState extends State<TabsSection> {
               Text(
                 "Benki",
                 style: TextStyle(color: Colors.black),
-              )
+              ),
+              SizedBox(height: 5),
+              tappeindex == 1
+                  ? Container(color: Colors.red, width: 50, height: 2)
+                  : Container()
             ])),
       ],
     );
