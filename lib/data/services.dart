@@ -78,27 +78,32 @@ List<Map> services = [
   },
 ];
 
-List<Map> dukalaTigo = [
+List<Map> kwendaBenki = [
   {
-    "name": "Nunua Salio",
+    "name": "ACB",
     "icon": Icon(Icons.phone_android_outlined,
         color: AppColors.primaryColor, size: 50),
   },
   {
-    "name": "Nunua Kifurushi",
+    "name": "ACTCALAMICRO FINANCE",
     "icon": Icon(Icons.shopping_cart, color: AppColors.primaryColor, size: 50),
   },
   {
-    "name": "Home Internet",
+    "name": "AKIBA COMMERCIAL BANK",
     "icon": Icon(Icons.wifi_rounded, color: AppColors.primaryColor, size: 50),
   },
   {
-    "name": "Huduma ya Niwezeshe",
+    "name": "AMANA",
     "icon":
         Icon(Icons.handshake_outlined, color: AppColors.primaryColor, size: 50),
   },
   {
-    "name": "jihudumie",
+    "name": "AZANIA",
+    "icon":
+        Icon(Icons.add_box_outlined, color: AppColors.primaryColor, size: 50),
+  },
+  {
+    "name": "Absa Bank",
     "icon":
         Icon(Icons.add_box_outlined, color: AppColors.primaryColor, size: 50),
   }

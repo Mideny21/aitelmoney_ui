@@ -38,24 +38,63 @@ class _TabsSectionState extends State<TabsSection> {
               width: 80,
               height: 100,
               decoration: BoxDecoration(
+                  color: tappeindex == 0 ? Colors.white : null,
+                  boxShadow: tappeindex == 0
+                      ? [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.4),
+                            spreadRadius: 2,
+                            blurRadius: 8,
+                          ),
+                        ]
+                      : null,
                   border:
                       tappeindex == 0 ? Border.all(color: Colors.black) : null,
                   borderRadius:
                       BorderRadius.only(topRight: Radius.circular(20))),
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [Icon(Icons.person), Text("Mtu")])),
+                  children: [
+                    Icon(
+                      Icons.person,
+                      color: Colors.grey,
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      "Mtu",
+                      style: TextStyle(color: Colors.black),
+                    )
+                  ])),
         ),
         Container(
             width: 80,
             height: 100,
             decoration: BoxDecoration(
+                color: tappeindex == 1 ? Colors.white : null,
+                boxShadow: tappeindex == 1
+                    ? [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.4),
+                          spreadRadius: 2,
+                          blurRadius: 8,
+                        ),
+                      ]
+                    : null,
                 border:
                     tappeindex == 1 ? Border.all(color: Colors.black) : null,
                 borderRadius: BorderRadius.only(topRight: Radius.circular(20))),
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [Icon(Icons.person), Text("Benki")])),
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Icon(
+                Icons.account_balance,
+                color: Colors.grey,
+              ),
+              SizedBox(height: 10),
+              Text(
+                "Benki",
+                style: TextStyle(color: Colors.black),
+              )
+            ])),
       ],
     );
   }
