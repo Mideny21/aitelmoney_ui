@@ -255,10 +255,14 @@ class NdaniYaNchi extends StatelessWidget {
 class InputForm extends StatelessWidget {
   final String title;
   final String hintText;
+  final bool sufficon;
+  final IconData? icon;
   const InputForm({
     Key? key,
     required this.title,
     required this.hintText,
+    this.sufficon = false,
+    this.icon,
   }) : super(key: key);
 
   @override
@@ -268,7 +272,8 @@ class InputForm extends StatelessWidget {
       children: [
         Text(title),
         TextField(
-          decoration: InputDecoration(hintText: hintText),
+          decoration: InputDecoration(
+              hintText: hintText, suffixIcon: sufficon ? Icon(icon) : null),
         )
       ],
     );

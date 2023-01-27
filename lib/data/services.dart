@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../pages/lipia_bill.dart';
+import '../pages/nunua_bando.dart';
 import '../pages/toa_pesa.dart';
 import '../pages/tuma_pesa.dart';
 import '../utils/colors.dart';
@@ -53,7 +54,11 @@ List<Map> services = [
     "secondary": "assets/images/dstvlogo.jpeg",
     "name": "Nunua Bando",
     "icon": Icon(Icons.shopping_cart_outlined, color: Colors.red, size: 30),
-    "badge": false
+    "badge": false,
+    "tap": () {
+      NavigationService.instance.navigateToRoute(
+          MaterialPageRoute(builder: (_) => const NunuaBandoScreen()));
+    }
   },
   {
     "image": null,
