@@ -2,10 +2,16 @@ import 'package:flutter/material.dart';
 
 class TabsSection extends StatefulWidget {
   final TabController? controller;
+  final List<IconData> icon;
+  final List<String> title;
+  final double? fontsize;
 
   const TabsSection({
     Key? key,
     this.controller,
+    required this.icon,
+    required this.title,
+    this.fontsize,
   }) : super(key: key);
 
   @override
@@ -56,13 +62,14 @@ class _TabsSectionState extends State<TabsSection> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(
-                      Icons.person,
+                      widget.icon[0],
                       color: Colors.grey,
                     ),
                     SizedBox(height: 10),
                     Text(
-                      "Mtu",
-                      style: TextStyle(color: Colors.black),
+                      widget.title[0],
+                      style: TextStyle(
+                          color: Colors.black, fontSize: widget.fontsize ?? 10),
                     ),
                     SizedBox(height: 3),
                     tappeindex == 0
@@ -90,13 +97,14 @@ class _TabsSectionState extends State<TabsSection> {
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               Icon(
-                Icons.account_balance,
+                widget.icon[1],
                 color: Colors.grey,
               ),
               SizedBox(height: 10),
               Text(
-                "Benki",
-                style: TextStyle(color: Colors.black),
+                widget.title[1],
+                style: TextStyle(
+                    color: Colors.black, fontSize: widget.fontsize ?? 10),
               ),
               SizedBox(height: 5),
               tappeindex == 1

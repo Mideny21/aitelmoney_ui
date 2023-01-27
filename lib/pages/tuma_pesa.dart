@@ -57,7 +57,10 @@ class _TumaPesaScreenState extends State<TumaPesaScreen>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text("Kwenda"),
-              TabsSection(controller: _tabController),
+              TabsSection(
+                  icon: [Icons.person, Icons.account_balance_outlined],
+                  title: ['Mtu', 'Benki'],
+                  controller: _tabController),
               Expanded(
                 child: PageView(
                   physics: const NeverScrollableScrollPhysics(),
@@ -186,57 +189,63 @@ class NdaniYaNchi extends StatelessWidget {
           width: double.infinity,
           height: MediaQuery.of(context).size.height * 0.42,
           child: Card(
+              elevation: 5,
               child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
-            child:
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  border: Border.all(color: Colors.grey),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: Column(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+                child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      InputForm(
-                        title: 'Jina la Mpokeaji au Namba',
-                        hintText: 'Weka jina la Mpokeaji au Namba',
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          border: Border.all(color: Colors.grey),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              InputForm(
+                                title: 'Jina la Mpokeaji au Namba',
+                                hintText: 'Weka jina la Mpokeaji au Namba',
+                              ),
+                              SizedBox(height: 10),
+                              InputForm(
+                                title: 'Ingiza kiasi',
+                                hintText: 'Weka jina la Mpokeaji au Namba',
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 15),
                       InputForm(
-                        title: 'Ingiza kiasi',
-                        hintText: 'Weka jina la Mpokeaji au Namba',
+                        title: 'maoni_ya hiari (Si Lazima)',
+                        hintText: 'Ingiza maoni',
                       ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(height: 15),
-              InputForm(
-                title: 'maoni_ya hiari (Si Lazima)',
-                hintText: 'Ingiza maoni',
-              ),
-              SizedBox(height: 15),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [Icon(Icons.arrow_back), Text("Rudi Nyuma")],
-                  ),
-                  CustomButton(
-                    height: 40,
-                    tap: () {},
-                    text: 'Endelea',
-                    width: 80,
-                    textColor: Colors.white,
-                    color: Colors.red,
-                  )
-                ],
-              )
-            ]),
-          )),
+                      SizedBox(height: 15),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Icon(Icons.arrow_back),
+                              Text("Rudi Nyuma")
+                            ],
+                          ),
+                          CustomButton(
+                            height: 40,
+                            tap: () {},
+                            text: 'Endelea',
+                            width: 80,
+                            textColor: Colors.white,
+                            color: Colors.red,
+                          )
+                        ],
+                      )
+                    ]),
+              )),
         ),
       ],
     );

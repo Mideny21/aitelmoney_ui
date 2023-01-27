@@ -124,6 +124,76 @@ List<Map> hudumaZaKifedha = [
   },
 ];
 
+List<Map> lipiaBili = [
+  {
+    "name": "Hifadhi Kumbukumbu",
+    "icon": Icon(Icons.shopping_basket, color: Colors.red, size: 45),
+    "image": "assets/images/visatigo.png"
+  },
+  {
+    "name": "Ingiza Namba ya Biashara",
+    "icon": Icon(Icons.shopping_basket, color: Colors.red, size: 45),
+  },
+  {
+    "name": "Chagua Biashara",
+    "icon": Icon(Icons.shopping_basket, color: Colors.red, size: 45),
+    "image": null
+  },
+  {
+    "name": "Umeme Na Nishati",
+    "icon": Icon(Icons.shopping_basket, color: Colors.red, size: 45),
+    "image": null
+  },
+  {
+    "name": "Maji (DAWASCO)",
+    "icon": Icon(Icons.shopping_basket, color: Colors.red, size: 45),
+    "image": null
+  },
+  {
+    "name": "Pay Tv",
+    "icon": Icon(Icons.shopping_basket, color: Colors.red, size: 45),
+    "image": null
+  },
+  {
+    "name": "Malipo Ya Serikali",
+    "icon": Icon(Icons.shopping_basket, color: Colors.red, size: 45),
+    "image": null
+  },
+  {
+    "name": "Huduma za Elimu",
+    "icon": Icon(Icons.shopping_basket, color: Colors.red, size: 45),
+  },
+  {
+    "name": "School Fees",
+    "icon": Icon(Icons.shopping_basket, color: Colors.red, size: 45),
+    "image": null
+  },
+  {
+    "name": "Usafiri wa Anga",
+    "icon": Icon(Icons.shopping_basket, color: Colors.red, size: 45),
+    "image": null
+  },
+  {
+    "name": "Bahati na Sibu & Michezo",
+    "icon": Icon(Icons.shopping_basket, color: Colors.red, size: 45),
+    "image": null
+  },
+  {
+    "name": "US Visa",
+    "icon": Icon(Icons.shopping_basket, color: Colors.red, size: 45),
+    "image": null
+  },
+  {
+    "name": "Umeme Na Nishati",
+    "icon": Icon(Icons.shopping_basket, color: Colors.red, size: 45),
+    "image": null
+  },
+  {
+    "name": "Umeme Na Nishati",
+    "icon": Icon(Icons.shopping_basket, color: Colors.red, size: 45),
+  },
+];
+
 List<Map> dukalaTigoServices = [
   {
     "image": "assets/images/dstv.jpeg",
