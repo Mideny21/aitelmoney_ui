@@ -1,3 +1,4 @@
+import 'package:airtelmoney_ui/pages/nunua_salio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -5,6 +6,7 @@ import '../pages/lipia_bill.dart';
 import '../pages/nunua_bando.dart';
 import '../pages/toa_pesa.dart';
 import '../pages/tuma_pesa.dart';
+import '../pages/vocha_kukwangua.dart';
 import '../utils/colors.dart';
 import '../utils/navigator.dart';
 
@@ -65,14 +67,22 @@ List<Map> services = [
     "secondary": "assets/images/dstvlogo.jpeg",
     "icon": Icon(Icons.language_outlined, color: Colors.red, size: 30),
     "name": "Nunua Salio",
-    "badge": false
+    "badge": false,
+    "tap": () {
+      NavigationService.instance.navigateToRoute(
+          MaterialPageRoute(builder: (_) => const NunuaSalioScreen()));
+    }
   },
   {
     "image": null,
     "secondary": "assets/images/dstvlogo.jpeg",
     "icon": Icon(Icons.handshake_outlined, color: Colors.red, size: 30),
     "name": "Vocha ya kukwangua",
-    "badge": true
+    "badge": true,
+    "tap": () {
+      NavigationService.instance.navigateToRoute(
+          MaterialPageRoute(builder: (_) => const VochaYaKuKwanguaScreen()));
+    }
   },
   {
     "image": null,
@@ -189,12 +199,12 @@ List<Map> lipiaBili = [
     "image": null
   },
   {
-    "name": "Umeme Na Nishati",
+    "name": "Wakala wa Vocha",
     "icon": Icon(Icons.shopping_basket, color: Colors.red, size: 45),
     "image": null
   },
   {
-    "name": "Umeme Na Nishati",
+    "name": "Postpaid",
     "icon": Icon(Icons.shopping_basket, color: Colors.red, size: 45),
   },
 ];

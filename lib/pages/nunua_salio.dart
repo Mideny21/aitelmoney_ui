@@ -4,29 +4,29 @@ import 'package:flutter/material.dart';
 
 import '../widgets/custom_button.dart';
 
-class NunuaBandoScreen extends StatefulWidget {
-  const NunuaBandoScreen({super.key});
+class NunuaSalioScreen extends StatefulWidget {
+  const NunuaSalioScreen({super.key});
 
   @override
-  State<NunuaBandoScreen> createState() => _NunuaBandoScreenState();
+  State<NunuaSalioScreen> createState() => _NunuaSalioScreenState();
 }
 
-class _NunuaBandoScreenState extends State<NunuaBandoScreen> {
+class _NunuaSalioScreenState extends State<NunuaSalioScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
         elevation: 3,
-        title: const Text('Nunua Bando'),
+        title: const Text('Nunua Salio/Muda wa Maongezi'),
       ),
-      body: const NunuaBandoWidgets(),
+      body: const NunuaSalioWidgets(),
     );
   }
 }
 
-class NunuaBandoWidgets extends StatelessWidget {
-  const NunuaBandoWidgets({
+class NunuaSalioWidgets extends StatelessWidget {
+  const NunuaSalioWidgets({
     Key? key,
   }) : super(key: key);
 

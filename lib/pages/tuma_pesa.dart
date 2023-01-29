@@ -99,7 +99,7 @@ class _TumaPesaScreenState extends State<TumaPesaScreen>
                                 controller: _mtuController,
                                 children: <Widget>[
                                   const NdaniYaNchi(),
-                                  Container(color: Colors.pink)
+                                  const NjeYaNchi()
                                 ]),
                           )
                         ]),
@@ -252,17 +252,9 @@ class NdaniYaNchi extends StatelessWidget {
   }
 }
 
-class InputForm extends StatelessWidget {
-  final String title;
-  final String hintText;
-  final bool sufficon;
-  final IconData? icon;
-  const InputForm({
+class NjeYaNchi extends StatelessWidget {
+  const NjeYaNchi({
     Key? key,
-    required this.title,
-    required this.hintText,
-    this.sufficon = false,
-    this.icon,
   }) : super(key: key);
 
   @override
@@ -270,10 +262,95 @@ class InputForm extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(title),
+        const Text('TUMA PESA NJE YA NCHI'),
+        const SizedBox(height: 8),
+        SizedBox(
+          width: double.infinity,
+          height: MediaQuery.of(context).size.height * 0.42,
+          child: Card(
+              elevation: 5,
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      InputForm(
+                        title: 'Weka jina la Mpokeaji au Namba',
+                        hintText: 'Weka jina la Mpokeaji....',
+                      ),
+                      SizedBox(height: 15),
+                      InputForm(
+                        title: 'Ingiza Jina',
+                        hintText: 'Jina',
+                      ),
+                      SizedBox(height: 15),
+                      InputForm(
+                        title: 'Ingiza Kiasi',
+                        hintText: 'TZS',
+                        redColor: true,
+                      ),
+                      SizedBox(height: 15),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Icon(Icons.arrow_back),
+                              Text("Rudi Nyuma")
+                            ],
+                          ),
+                          CustomButton(
+                            height: 40,
+                            tap: () {},
+                            text: 'Endelea',
+                            width: 80,
+                            textColor: Colors.white,
+                            color: Colors.red,
+                          )
+                        ],
+                      )
+                    ]),
+              )),
+        ),
+      ],
+    );
+  }
+}
+
+class InputForm extends StatelessWidget {
+  final String title;
+  final String hintText;
+  final bool sufficon;
+  final TextEditingController? controller;
+  final IconData? icon;
+  final bool redColor;
+  const InputForm({
+    Key? key,
+    required this.title,
+    required this.hintText,
+    this.sufficon = false,
+    this.controller,
+    this.icon,
+    this.redColor = false,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          title,
+        ),
         TextField(
+          controller: controller,
           decoration: InputDecoration(
-              hintText: hintText, suffixIcon: sufficon ? Icon(icon) : null),
+              hintStyle: TextStyle(
+                  color: redColor ? Colors.red : Colors.grey,
+                  fontWeight: redColor ? FontWeight.bold : FontWeight.w400),
+              hintText: hintText,
+              suffixIcon: sufficon ? Icon(icon) : null),
         )
       ],
     );
