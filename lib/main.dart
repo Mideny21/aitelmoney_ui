@@ -1,6 +1,7 @@
 import 'package:airtelmoney_ui/utils/navigator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'screens/main_screen.dart';
 
@@ -16,12 +17,20 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
         const SystemUiOverlayStyle(statusBarColor: Colors.red));
-    return MaterialApp(
-      navigatorKey: NavigationService.instance.navigationKey,
-      debugShowCheckedModeBanner: false,
-      title: 'Airtel-Money UI',
-      theme: ThemeData(),
-      home: const MainScreen(),
+    return ScreenUtilInit(
+      designSize: const Size(360, 690),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) {
+        return MaterialApp(
+          navigatorKey: NavigationService.instance.navigationKey,
+          debugShowCheckedModeBanner: false,
+          title: 'Airtel-Money UI',
+          theme: ThemeData(),
+          home: child,
+        );
+      },
+      child: const MainScreen(),
     );
   }
 }
