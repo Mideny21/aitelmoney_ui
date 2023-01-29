@@ -1,5 +1,6 @@
 import 'package:airtelmoney_ui/components/service_panel.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../components/top_part.dart';
 
@@ -41,22 +42,22 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
+                    children: [
                       Text(
                         "Mabadiliko",
                         style: TextStyle(
                             color: Colors.black54,
                             fontWeight: FontWeight.bold,
-                            fontSize: 16),
+                            fontSize: 14.sp),
                       ),
                       Text(
                         "Tazama zote",
-                        style: TextStyle(color: Colors.blue),
+                        style: TextStyle(color: Colors.blue, fontSize: 12.sp),
                       ),
                     ],
                   ),
                   const ServicePanel(),
-                  const SizedBox(height: 8),
+                  SizedBox(height: 8.h),
                   SizedBox(
                     height: 125,
                     child: ListView.builder(
@@ -67,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           return PromoBox();
                         }),
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10.h),
                   SizedBox(
                     height: 125,
                     child: ListView.builder(

@@ -47,7 +47,7 @@ List<Map> services = [
   {
     "image": null,
     "secondary": "assets/images/captain.jpeg",
-    "name": "Lipa Kwa Simu",
+    "name": "Lipa Kwa simu",
     "icon": Icon(Icons.account_balance_outlined, color: Colors.red, size: 30),
     "badge": false
   },
@@ -78,7 +78,7 @@ List<Map> services = [
     "secondary": "assets/images/dstvlogo.jpeg",
     "icon": Icon(Icons.handshake_outlined, color: Colors.red, size: 30),
     "name": "Vocha ya kukwangua",
-    "badge": true,
+    "badge": false,
     "tap": () {
       NavigationService.instance.navigateToRoute(
           MaterialPageRoute(builder: (_) => const VochaYaKuKwanguaScreen()));

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../data/services.dart';
-
-import '../utils/colors.dart';
 
 class ServicePanel extends StatefulWidget {
   const ServicePanel({super.key});
@@ -12,22 +11,21 @@ class ServicePanel extends StatefulWidget {
 }
 
 class _ServicePanelState extends State<ServicePanel> {
-  String dropdownValue = 'Tigo Pesa';
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            mainAxisSpacing: 0,
-            crossAxisSpacing: 0,
-            mainAxisExtent: 100,
+            mainAxisSpacing: 2,
+            crossAxisSpacing: 2,
+            mainAxisExtent: 120,
             crossAxisCount: 4),
         shrinkWrap: true,
-        padding: const EdgeInsets.all(4),
+        padding: const EdgeInsets.all(4).r,
         physics: const NeverScrollableScrollPhysics(),
         itemCount: services.length,
         itemBuilder: ((context, index) {
           return Padding(
-            padding: const EdgeInsets.all(2.0),
+            padding: EdgeInsets.all(2.0).r,
             child: Stack(
               // alignment: Alignment.r,
               children: [
@@ -36,7 +34,9 @@ class _ServicePanelState extends State<ServicePanel> {
                   child: InkWell(
                     onTap: services[index]['tap'],
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      padding: const EdgeInsets.symmetric(
+                              horizontal: 8.0, vertical: 3)
+                          .r,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -50,9 +50,13 @@ class _ServicePanelState extends State<ServicePanel> {
                               child: services[index]['icon'],
                             ),
                           ),
-                          const SizedBox(height: 10),
-                          Text(services[index]['name'],
-                              overflow: TextOverflow.ellipsis),
+                          SizedBox(height: 10.h),
+                          Text(
+                            services[index]['name'],
+                            textAlign: TextAlign.center,
+                            softWrap: true,
+                            style: TextStyle(fontSize: 12.sp),
+                          ),
                         ],
                       ),
                     ),
@@ -60,21 +64,26 @@ class _ServicePanelState extends State<ServicePanel> {
                 ),
                 services[index]['badge'] == true
                     ? Positioned(
-                        top: -4,
+                        top: 0,
                         right: 0,
                         child: Container(
-                          height: 30,
-                          decoration: const BoxDecoration(
-                              color: Colors.red, shape: BoxShape.rectangle),
-                          child: Center(
-                              child: Text(
-                            "New",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 10,
+                          height: 17.h,
+                          width: 38.w,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5).r,
+                            color: Colors.red,
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(3.0).r,
+                            child: Text(
+                              "New",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 10.sp,
                                 color: Colors.white,
-                                fontWeight: FontWeight.bold),
-                          )),
+                              ),
+                            ),
+                          ),
                         ))
                     : Container()
               ],

@@ -1,5 +1,6 @@
 import 'package:airtelmoney_ui/widgets/painters.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TopPart extends StatelessWidget {
   final double height;
@@ -13,24 +14,24 @@ class TopPart extends StatelessWidget {
     return Stack(children: [
       Container(
         color: Colors.red,
-        height: 150,
+        height: 125.h,
         width: MediaQuery.of(context).size.width,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 15).r,
           child:
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-            const Text(
+            Text(
               "airtel",
               style: TextStyle(
-                  fontSize: 22.0,
+                  fontSize: 20.sp,
                   fontWeight: FontWeight.w600,
                   color: Colors.white),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
+              children: [
                 Icon(Icons.qr_code_scanner_outlined, color: Colors.white),
-                SizedBox(width: 8),
+                SizedBox(width: 8.w),
                 Icon(Icons.notifications, color: Colors.white)
               ],
             )
@@ -43,9 +44,9 @@ class TopPart extends StatelessWidget {
         left: 5,
         right: 5,
         child: SizedBox(
-          height: height + 244,
+          height: height + 260,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 3),
+            padding: const EdgeInsets.symmetric(horizontal: 3).r,
             child: Stack(
               children: [
                 Positioned(
@@ -55,12 +56,13 @@ class TopPart extends StatelessWidget {
                   child: Card(
                       elevation: 8,
                       child: SizedBox(
-                        height: 205,
+                        height: 178.h,
                         width: MediaQuery.of(context).size.width,
                         child: Center(
                             child: Padding(
                           padding: const EdgeInsets.symmetric(
-                              horizontal: 8, vertical: 10),
+                                  horizontal: 8, vertical: 10)
+                              .r,
                           child: Column(
                             children: [
                               Row(
@@ -70,21 +72,28 @@ class TopPart extends StatelessWidget {
                                   Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
-                                    children: const [
-                                      Text("RAYMOND EMMANUEL MWAIKASU"),
-                                      Text("Malipo ya kabla - 683152004"),
+                                    children: [
+                                      Text(
+                                        "RAYMOND EMMANUEL MWAIKASU",
+                                        style: TextStyle(fontSize: 12.sp),
+                                      ),
+                                      Text(
+                                        "Malipo ya kabla - 683152004",
+                                        style: TextStyle(fontSize: 12.sp),
+                                      ),
                                     ],
                                   ),
-                                  const Text(
+                                  Text(
                                     'Kuhusu Akaunti Yangu',
-                                    style: TextStyle(color: Colors.blue),
+                                    style: TextStyle(
+                                        color: Colors.blue, fontSize: 12.sp),
                                   ),
                                 ],
                               ),
                               const Divider(thickness: 1),
                               Padding(
                                 padding:
-                                    const EdgeInsets.symmetric(horizontal: 5),
+                                    const EdgeInsets.symmetric(horizontal: 5).r,
                                 child: Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
@@ -93,25 +102,28 @@ class TopPart extends StatelessWidget {
                                       child: Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
-                                        children: const [
+                                        children: [
                                           Text(
                                             "0",
                                             style: TextStyle(
-                                                fontSize: 16,
+                                                fontSize: 15.sp,
                                                 color: Colors.black54,
                                                 fontWeight: FontWeight.bold),
                                           ),
-                                          SizedBox(height: 5),
+                                          SizedBox(height: 5.h),
                                           Text(
                                             "TZS",
                                             style: TextStyle(
+                                                fontSize: 12.sp,
                                                 color: Colors.red,
                                                 fontWeight: FontWeight.bold),
                                           ),
-                                          SizedBox(height: 5),
+                                          SizedBox(height: 5.h),
                                           Text(
-                                            "salio la Muda wa \n Maongezi",
+                                            "salio la Muda wa Maongezi",
+                                            softWrap: true,
                                             style: TextStyle(
+                                                fontSize: 12.sp,
                                                 fontWeight: FontWeight.bold,
                                                 color: Colors.grey),
                                           )
@@ -123,18 +135,19 @@ class TopPart extends StatelessWidget {
                                       child: Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
-                                        children: const [
+                                        children: [
                                           Text(
                                             "50.00",
                                             style: TextStyle(
-                                                fontSize: 16,
+                                                fontSize: 14.sp,
                                                 color: Colors.black54,
                                                 fontWeight: FontWeight.bold),
                                           ),
-                                          SizedBox(height: 5),
+                                          SizedBox(height: 5.h),
                                           Text(
                                             "Mins",
                                             style: TextStyle(
+                                                fontSize: 14.sp,
                                                 color: Colors.red,
                                                 fontWeight: FontWeight.bold),
                                           ),
@@ -142,6 +155,7 @@ class TopPart extends StatelessWidget {
                                           Text(
                                             "salio la Dakika",
                                             style: TextStyle(
+                                                fontSize: 12.sp,
                                                 fontWeight: FontWeight.bold,
                                                 color: Colors.grey),
                                           )
@@ -153,18 +167,19 @@ class TopPart extends StatelessWidget {
                                       child: Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
-                                        children: const [
+                                        children: [
                                           Text(
                                             "800.90",
                                             style: TextStyle(
-                                                fontSize: 16,
+                                                fontSize: 14.sp,
                                                 color: Colors.black54,
                                                 fontWeight: FontWeight.bold),
                                           ),
-                                          SizedBox(height: 5),
+                                          SizedBox(height: 5.h),
                                           Text(
                                             "MB",
                                             style: TextStyle(
+                                                fontSize: 14.sp,
                                                 color: Colors.red,
                                                 fontWeight: FontWeight.bold),
                                           ),
@@ -172,6 +187,7 @@ class TopPart extends StatelessWidget {
                                           Text(
                                             "salio la Data",
                                             style: TextStyle(
+                                                fontSize: 12.sp,
                                                 fontWeight: FontWeight.bold,
                                                 color: Colors.grey),
                                           )
@@ -184,7 +200,8 @@ class TopPart extends StatelessWidget {
                               const Divider(thickness: 1),
                               Padding(
                                 padding: const EdgeInsets.symmetric(
-                                    horizontal: 8, vertical: 5),
+                                        horizontal: 8, vertical: 3)
+                                    .r,
                                 child: Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceAround,
@@ -200,15 +217,16 @@ class TopPart extends StatelessWidget {
                                           child: Row(
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
-                                              children: const [
+                                              children: [
                                                 Icon(
                                                   Icons.money,
                                                   color: Colors.red,
                                                 ),
-                                                SizedBox(width: 5),
+                                                SizedBox(width: 5.w),
                                                 Text(
                                                   "Nunua Bando",
                                                   style: TextStyle(
+                                                      fontSize: 12.sp,
                                                       color: Colors.red),
                                                 )
                                               ]),
@@ -227,15 +245,16 @@ class TopPart extends StatelessWidget {
                                           child: Row(
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
-                                              children: const [
+                                              children: [
                                                 Icon(
                                                   Icons.flash_on_outlined,
                                                   color: Colors.red,
                                                 ),
-                                                SizedBox(width: 5),
+                                                SizedBox(width: 5.w),
                                                 Text(
                                                   "Nunua Salio",
                                                   style: TextStyle(
+                                                      fontSize: 12.sp,
                                                       color: Colors.red),
                                                 )
                                               ]),
@@ -251,7 +270,7 @@ class TopPart extends StatelessWidget {
                       )),
                 ),
                 Positioned(
-                  top: 224,
+                  top: 191.h,
                   left: 0,
                   right: 0,
                   child: Card(
@@ -269,9 +288,10 @@ class TopPart extends StatelessWidget {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    const Text(
+                                    Text(
                                       "Airtel Money",
                                       style: TextStyle(
+                                          fontSize: 12.sp,
                                           color: Colors.red,
                                           fontWeight: FontWeight.bold),
                                     ),
@@ -282,15 +302,16 @@ class TopPart extends StatelessWidget {
                                                 letterSpacing: 1,
                                                 color: Colors.red,
                                                 fontWeight: FontWeight.w600,
-                                                fontSize: 14),
+                                                fontSize: 12.sp),
                                             children: [
                                           TextSpan(
                                               text: 'TZS ',
-                                              style: TextStyle(fontSize: 14)),
+                                              style:
+                                                  TextStyle(fontSize: 12.sp)),
                                           TextSpan(
                                               text: '0',
                                               style: TextStyle(
-                                                  fontSize: 15,
+                                                  fontSize: 12.sp,
                                                   letterSpacing: 0.5,
                                                   fontWeight: FontWeight.w600,
                                                   color: Colors.black)),
@@ -306,38 +327,40 @@ class TopPart extends StatelessWidget {
                                         side: const BorderSide(
                                             color: Colors.black)),
                                     onPressed: () {},
-                                    child: const Text(
+                                    child: Text(
                                       'Ficha Salio',
-                                      style: TextStyle(color: Colors.black),
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontSize: 12.sp, color: Colors.black),
                                     )),
                               ]),
                         ),
                       )),
                 ),
                 Positioned(
-                  top: 207,
-                  left: 25,
+                  top: 180.h,
+                  left: 60,
                   child: CustomPaint(
                     painter: HolderPainter(),
                   ),
                 ),
                 Positioned(
-                  top: 207,
-                  right: 55,
+                  top: 180.h,
+                  right: 80,
                   child: CustomPaint(
                     painter: HolderPainter(),
                   ),
                 ),
                 Positioned(
-                  top: 208,
-                  left: 40,
+                  top: 180.h,
+                  left: 75,
                   child: CustomPaint(
                     painter: RopePainter(),
                   ),
                 ),
                 Positioned(
-                  top: 208,
-                  right: 40,
+                  top: 180.h,
+                  right: 65,
                   child: CustomPaint(
                     painter: RopePainter(),
                   ),
@@ -359,8 +382,8 @@ class VerticalLine extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
-      child: Container(color: Colors.black45, height: 58, width: 1),
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5).r,
+      child: Container(color: Colors.black45, height: 60.h, width: 1.w),
     );
   }
 }

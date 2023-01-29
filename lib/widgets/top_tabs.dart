@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TabsSection extends StatefulWidget {
   final TabController? controller;
@@ -65,21 +66,28 @@ class _TabsSectionState extends State<TabsSection> {
                       widget.icon[0],
                       color: Colors.grey,
                     ),
-                    SizedBox(height: 10),
-                    Text(
-                      widget.title[0],
-                      style: TextStyle(
-                          color: Colors.black, fontSize: widget.fontsize ?? 10),
+                    SizedBox(height: 10.h),
+                    Padding(
+                      padding: const EdgeInsets.all(5.0).r,
+                      child: Text(
+                        widget.title[0],
+                        softWrap: true,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Colors.black,
+                            letterSpacing: 0.8,
+                            fontSize: widget.fontsize ?? 12.sp),
+                      ),
                     ),
-                    SizedBox(height: 3),
+                    SizedBox(height: 3.h),
                     tappeindex == 0
                         ? Container(color: Colors.red, width: 50, height: 2)
                         : Container()
                   ])),
         ),
         Container(
-            width: 80,
-            height: 100,
+            width: 80.w,
+            height: 100.h,
             decoration: BoxDecoration(
                 color: tappeindex == 1 ? Colors.white : null,
                 boxShadow: tappeindex == 1
@@ -100,13 +108,18 @@ class _TabsSectionState extends State<TabsSection> {
                 widget.icon[1],
                 color: Colors.grey,
               ),
-              SizedBox(height: 10),
-              Text(
-                widget.title[1],
-                style: TextStyle(
-                    color: Colors.black, fontSize: widget.fontsize ?? 10),
+              SizedBox(height: 10.h),
+              Padding(
+                padding: const EdgeInsets.all(5.0).r,
+                child: Text(
+                  widget.title[1],
+                  softWrap: true,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Colors.black, fontSize: widget.fontsize ?? 12.sp),
+                ),
               ),
-              SizedBox(height: 5),
+              SizedBox(height: 5.h),
               tappeindex == 1
                   ? Container(color: Colors.red, width: 50, height: 2)
                   : Container()

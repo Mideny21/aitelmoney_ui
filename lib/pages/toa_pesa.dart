@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:airtelmoney_ui/widgets/top_tabs.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../widgets/custom_button.dart';
 
@@ -55,10 +56,11 @@ class _ToaPesaScreenState extends State<ToaPesaScreen>
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 20),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           TabsSection(
+              fontsize: 10.sp,
               icon: [Icons.earbuds, Icons.wallet_travel],
               title: ['Kutoka kwa Wakala', 'Kutoka kwa ATM'],
               controller: _toaController),
-          SizedBox(height: 10),
+          SizedBox(height: 10.h),
           Expanded(
             child: PageView(
                 physics: const NeverScrollableScrollPhysics(),
@@ -86,17 +88,21 @@ class KwaATMScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      height: 60,
-      child: Card(
-        elevation: 5,
-        child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: [...huduma]),
-      ),
+    return Column(
+      children: [
+        SizedBox(
+          // width: double.infinity,
+          height: 200.h,
+          child: Card(
+            elevation: 5,
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [...huduma]),
+          ),
+        ),
+      ],
     );
   }
 }

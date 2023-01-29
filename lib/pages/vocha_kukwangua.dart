@@ -35,6 +35,11 @@ class _VochaYaKuKwanguaScreenState extends State<VochaYaKuKwanguaScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.red,
+          elevation: 3,
+          title: const Text('Vocha ya Kukwangua'),
+        ),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 25),
           child: Column(

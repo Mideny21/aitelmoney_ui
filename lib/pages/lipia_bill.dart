@@ -55,7 +55,7 @@ class _ToaPesaScreenState extends State<LipiaBillScreen> {
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     mainAxisSpacing: 8,
                     crossAxisSpacing: 8,
-                    mainAxisExtent: 100,
+                    mainAxisExtent: 120,
                     crossAxisCount: 3),
                 shrinkWrap: true,
                 padding: const EdgeInsets.all(4),
@@ -78,9 +78,11 @@ class _ToaPesaScreenState extends State<LipiaBillScreen> {
                         // const SizedBox(height: ),
                         Padding(
                           padding: const EdgeInsets.all(4.0),
-                          child: Text(lipiaBili[index]['name'],
-                              textAlign: TextAlign.center,
-                              overflow: TextOverflow.ellipsis),
+                          child: Text(
+                            lipiaBili[index]['name'],
+                            textAlign: TextAlign.center,
+                            softWrap: true,
+                          ),
                         ),
                       ],
                     ),

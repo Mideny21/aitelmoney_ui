@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../data/services.dart';
 import '../utils/colors.dart';
@@ -56,10 +57,17 @@ class _TumaPesaScreenState extends State<TumaPesaScreen>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Kwenda"),
+              Text(
+                "Kwenda",
+                style: TextStyle(
+                    fontSize: 14.sp,
+                    letterSpacing: 0.8,
+                    color: Colors.grey,
+                    fontWeight: FontWeight.bold),
+              ),
               TabsSection(
                   icon: [Icons.person, Icons.account_balance_outlined],
-                  title: ['Mtu', 'Benki'],
+                  title: ['Mtu', 'BENKI'],
                   controller: _tabController),
               Expanded(
                 child: PageView(
@@ -125,8 +133,11 @@ class KweBenki extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("BENKI"),
-        const SizedBox(height: 8),
+        Text(
+          "BENKI",
+          style: TextStyle(fontSize: 12.sp),
+        ),
+        SizedBox(height: 8.h),
         Expanded(
           child: GridView.builder(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -152,16 +163,16 @@ class KweBenki extends StatelessWidget {
                         padding: const EdgeInsets.all(8),
                         child: Image.asset(
                           kwendaBenki[index]['icon'],
-                          height: 30,
+                          height: 30.h,
                           fit: BoxFit.cover,
                         ),
                       ),
-                      const SizedBox(height: 10),
-                      Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: Text(kwendaBenki[index]['name'],
-                            textAlign: TextAlign.center,
-                            overflow: TextOverflow.ellipsis),
+                      // const SizedBox(height: 10),
+                      Text(
+                        kwendaBenki[index]['name'],
+                        softWrap: true,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 10.sp),
                       ),
                     ],
                   ),
