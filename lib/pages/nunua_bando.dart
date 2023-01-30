@@ -1,5 +1,6 @@
 import 'package:airtelmoney_ui/pages/toa_pesa.dart';
 import 'package:airtelmoney_ui/pages/tuma_pesa.dart';
+import 'package:airtelmoney_ui/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/custom_button.dart';
@@ -16,7 +17,7 @@ class _NunuaBandoScreenState extends State<NunuaBandoScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.red,
+        backgroundColor: AppColors.primaryColor,
         elevation: 3,
         title: const Text('Nunua Bando'),
       ),

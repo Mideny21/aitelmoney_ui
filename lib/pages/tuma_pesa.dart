@@ -48,7 +48,7 @@ class _TumaPesaScreenState extends State<TumaPesaScreen>
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.red,
+          backgroundColor: AppColors.primaryColor,
           elevation: 3,
           title: const Text('Tuma Pesa'),
         ),
@@ -251,7 +251,7 @@ class NdaniYaNchi extends StatelessWidget {
                             text: 'Endelea',
                             width: 80,
                             textColor: Colors.white,
-                            color: Colors.red,
+                            color: AppColors.activeButtonColors,
                           )
                         ],
                       )

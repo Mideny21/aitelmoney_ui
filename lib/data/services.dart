@@ -1,6 +1,7 @@
 import 'package:airtelmoney_ui/pages/nunua_salio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../pages/lipia_bill.dart';
 import '../pages/nunua_bando.dart';
@@ -136,6 +137,43 @@ List<Map> hudumaZaKifedha = [
     "name": "Akiba",
     "icon": Icon(Icons.takeout_dining, color: AppColors.primaryColor, size: 50),
     "image": null
+  },
+];
+
+List<Map> zaidiItems = [
+  {
+    "name": "Setting",
+    "icon":
+        Icon(Icons.settings_outlined, color: AppColors.blueColor, size: 30.sp),
+  },
+  {
+    "name": "Airtel Shops",
+    "icon":
+        Icon(Icons.shopping_basket, color: AppColors.blueColor, size: 30.sp),
+  },
+  {
+    "name": "Help & Support",
+    "icon":
+        Icon(Icons.shopping_basket, color: AppColors.blueColor, size: 30.sp),
+  },
+  {
+    "name": "Terms & Conditions",
+    "icon":
+        Icon(Icons.shopping_basket, color: AppColors.blueColor, size: 30.sp),
+  },
+  {
+    "name": "About Us",
+    "icon":
+        Icon(Icons.shopping_basket, color: AppColors.blueColor, size: 30.sp),
+  },
+  {
+    "name": "Share the app",
+    "icon": Icon(Icons.share_outlined, color: AppColors.blueColor, size: 30.sp),
+  },
+  {
+    "name": "Setting",
+    "icon":
+        Icon(Icons.shopping_basket, color: AppColors.blueColor, size: 30.sp),
   },
 ];
 

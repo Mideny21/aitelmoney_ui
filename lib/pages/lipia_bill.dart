@@ -15,7 +15,7 @@ class _ToaPesaScreenState extends State<LipiaBillScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.red,
+        backgroundColor: AppColors.primaryColor,
         elevation: 3,
         title: const Text('Lipa Bili'),
       ),

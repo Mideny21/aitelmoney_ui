@@ -1,3 +1,4 @@
+import 'package:airtelmoney_ui/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 import 'package:airtelmoney_ui/widgets/top_tabs.dart';
@@ -48,7 +49,7 @@ class _ToaPesaScreenState extends State<ToaPesaScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.red,
+        backgroundColor: AppColors.primaryColor,
         elevation: 3,
         title: const Text('Toa Pesa'),
       ),

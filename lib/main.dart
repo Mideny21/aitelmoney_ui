@@ -1,3 +1,4 @@
+import 'package:airtelmoney_ui/utils/colors.dart';
 import 'package:airtelmoney_ui/utils/navigator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
-        const SystemUiOverlayStyle(statusBarColor: Colors.red));
+        const SystemUiOverlayStyle(statusBarColor: AppColors.primaryColor));
     return ScreenUtilInit(
       designSize: const Size(360, 690),
       minTextAdapt: true,

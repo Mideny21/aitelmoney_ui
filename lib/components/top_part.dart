@@ -1,3 +1,4 @@
+import 'package:airtelmoney_ui/utils/colors.dart';
 import 'package:airtelmoney_ui/widgets/painters.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,7 +14,7 @@ class TopPart extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(children: [
       Container(
-        color: Colors.red,
+        color: AppColors.primaryColor,
         height: 125.h,
         width: MediaQuery.of(context).size.width,
         child: Padding(
@@ -115,7 +116,7 @@ class TopPart extends StatelessWidget {
                                             "TZS",
                                             style: TextStyle(
                                                 fontSize: 12.sp,
-                                                color: Colors.red,
+                                                color: AppColors.primaryColor,
                                                 fontWeight: FontWeight.bold),
                                           ),
                                           SizedBox(height: 5.h),
@@ -148,7 +149,7 @@ class TopPart extends StatelessWidget {
                                             "Mins",
                                             style: TextStyle(
                                                 fontSize: 14.sp,
-                                                color: Colors.red,
+                                                color: AppColors.primaryColor,
                                                 fontWeight: FontWeight.bold),
                                           ),
                                           const SizedBox(height: 5),
@@ -180,7 +181,7 @@ class TopPart extends StatelessWidget {
                                             "MB",
                                             style: TextStyle(
                                                 fontSize: 14.sp,
-                                                color: Colors.red,
+                                                color: AppColors.primaryColor,
                                                 fontWeight: FontWeight.bold),
                                           ),
                                           SizedBox(height: 5),
@@ -220,14 +221,15 @@ class TopPart extends StatelessWidget {
                                               children: [
                                                 Icon(
                                                   Icons.money,
-                                                  color: Colors.red,
+                                                  color: AppColors.primaryColor,
                                                 ),
                                                 SizedBox(width: 5.w),
                                                 Text(
                                                   "Nunua Bando",
                                                   style: TextStyle(
                                                       fontSize: 12.sp,
-                                                      color: Colors.red),
+                                                      color: AppColors
+                                                          .primaryColor),
                                                 )
                                               ]),
                                         ),
@@ -248,14 +250,15 @@ class TopPart extends StatelessWidget {
                                               children: [
                                                 Icon(
                                                   Icons.flash_on_outlined,
-                                                  color: Colors.red,
+                                                  color: AppColors.primaryColor,
                                                 ),
                                                 SizedBox(width: 5.w),
                                                 Text(
                                                   "Nunua Salio",
                                                   style: TextStyle(
                                                       fontSize: 12.sp,
-                                                      color: Colors.red),
+                                                      color: AppColors
+                                                          .primaryColor),
                                                 )
                                               ]),
                                         ),
@@ -292,7 +295,7 @@ class TopPart extends StatelessWidget {
                                       "Airtel Money",
                                       style: TextStyle(
                                           fontSize: 12.sp,
-                                          color: Colors.red,
+                                          color: AppColors.primaryColor,
                                           fontWeight: FontWeight.bold),
                                     ),
                                     const SizedBox(height: 1),
@@ -300,7 +303,7 @@ class TopPart extends StatelessWidget {
                                         text: TextSpan(
                                             style: TextStyle(
                                                 letterSpacing: 1,
-                                                color: Colors.red,
+                                                color: AppColors.primaryColor,
                                                 fontWeight: FontWeight.w600,
                                                 fontSize: 12.sp),
                                             children: [

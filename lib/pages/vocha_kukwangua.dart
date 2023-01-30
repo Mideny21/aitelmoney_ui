@@ -1,4 +1,5 @@
 import 'package:airtelmoney_ui/pages/tuma_pesa.dart';
+import 'package:airtelmoney_ui/utils/colors.dart';
 import 'package:airtelmoney_ui/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
@@ -36,7 +37,7 @@ class _VochaYaKuKwanguaScreenState extends State<VochaYaKuKwanguaScreen> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.red,
+          backgroundColor: AppColors.primaryColor,
           elevation: 3,
           title: const Text('Vocha ya Kukwangua'),
         ),
