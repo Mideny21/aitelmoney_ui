@@ -48,15 +48,15 @@ class _MainScreenState extends State<MainScreen> {
             label: 'Nyumbani',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.add_box_outlined),
+            icon: Icon(Icons.wallet),
             label: 'Airtel Money',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.add_box_outlined),
+            icon: Icon(Icons.live_tv_outlined),
             label: 'Airtel TV',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.horizontal_distribute_outlined),
+            icon: Icon(Icons.menu),
             label: 'Zaidi',
           ),
         ],

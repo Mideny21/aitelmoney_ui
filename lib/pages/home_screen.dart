@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
           // Add the app bar to the CustomScrollView.
           SliverAppBar(
               backgroundColor: Colors.transparent,
-              expandedHeight: MediaQuery.of(context).size.height * 0.42,
+              expandedHeight: MediaQuery.of(context).size.height * 0.44,
               floating: true,
               flexibleSpace: FlexibleSpaceBar(
                 background: Container(

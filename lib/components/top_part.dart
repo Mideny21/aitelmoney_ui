@@ -1,7 +1,8 @@
-import 'package:airtelmoney_ui/utils/colors.dart';
-import 'package:airtelmoney_ui/widgets/painters.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'package:airtelmoney_ui/utils/colors.dart';
+import 'package:airtelmoney_ui/widgets/painters.dart';
 
 class TopPart extends StatelessWidget {
   final double height;
@@ -378,15 +379,27 @@ class TopPart extends StatelessWidget {
 }
 
 class VerticalLine extends StatelessWidget {
+  final double? height;
+  final Color? color;
+  final EdgeInsetsGeometry? padding;
+  final double? width;
   const VerticalLine({
     Key? key,
+    this.height,
+    this.color,
+    this.padding,
+    this.width,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5).r,
-      child: Container(color: Colors.black45, height: 60.h, width: 1.w),
+      padding:
+          padding ?? const EdgeInsets.symmetric(horizontal: 8, vertical: 5).r,
+      child: Container(
+          color: color ?? Colors.black45,
+          height: height ?? 60.h,
+          width: width ?? 1.w),
     );
   }
 }

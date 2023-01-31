@@ -76,9 +76,7 @@ class _ZaidiScreenState extends State<ZaidiScreen> {
                     title: Text(zaidiItems[index]['name']),
                   );
                 }),
-                separatorBuilder: ((context, index) => Divider(
-                      thickness: 2,
-                    )),
+                separatorBuilder: ((context, index) => Divider(thickness: 2)),
                 itemCount: zaidiItems.length)
           ],
         )),
