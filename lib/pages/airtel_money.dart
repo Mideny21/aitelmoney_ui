@@ -1,3 +1,4 @@
+import 'package:airtelmoney_ui/components/airtelMoney_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -57,7 +58,7 @@ class _AirtelMoneyScreenState extends State<AirtelMoneyScreen> {
                       ),
                     ],
                   ),
-                  const ServicePanel(),
+                  const AirtelMoneyService(),
                   SizedBox(height: 8.h),
                   SizedBox(
                     height: 125,

@@ -94,6 +94,89 @@ List<Map> services = [
   },
 ];
 
+List<Map> airtelMoneyservices = [
+  {
+    "image": null,
+    "secondary": "assets/images/dstvlogo.jpeg",
+    "name": "Tuma Pesa",
+    "icon": Icon(Icons.offline_share_outlined, color: Colors.red, size: 30),
+    "badge": false,
+    "tap": () {
+      NavigationService.instance.navigateToRoute(
+          MaterialPageRoute(builder: (_) => const TumaPesaScreen()));
+    }
+  },
+  {
+    "image": null,
+    "secondary": "assets/images/mpwa.png",
+    "name": "Toa Pesa",
+    "icon": Icon(Icons.upload_file_outlined, color: Colors.red, size: 30),
+    "badge": false,
+    "tap": () {
+      NavigationService.instance.navigateToRoute(
+          MaterialPageRoute(builder: (_) => const ToaPesaScreen()));
+    }
+  },
+  {
+    "image": null,
+    "secondary": "assets/images/gepg.png",
+    "name": "lipia Bili",
+    "icon": Icon(Icons.sticky_note_2_outlined, color: Colors.red, size: 30),
+    "badge": false,
+    "tap": () {
+      NavigationService.instance.navigateToRoute(
+          MaterialPageRoute(builder: (_) => const LipiaBillScreen()));
+    }
+  },
+  {
+    "image": null,
+    "secondary": "assets/images/captain.jpeg",
+    "name": "Rudisha Muamala",
+    "icon": Icon(Icons.account_balance_outlined, color: Colors.red, size: 30),
+    "badge": false
+  },
+  {
+    "image": null,
+    "secondary": "assets/images/dstvlogo.jpeg",
+    "name": "Lipa Kwa Simu",
+    "icon": Icon(Icons.shopping_cart_outlined, color: Colors.red, size: 30),
+    "badge": false,
+    "tap": () {
+      NavigationService.instance.navigateToRoute(
+          MaterialPageRoute(builder: (_) => const NunuaBandoScreen()));
+    }
+  },
+  {
+    "image": null,
+    "secondary": "assets/images/dstvlogo.jpeg",
+    "icon": Icon(Icons.language_outlined, color: Colors.red, size: 30),
+    "name": "Nunua Bando",
+    "badge": false,
+    "tap": () {
+      NavigationService.instance.navigateToRoute(
+          MaterialPageRoute(builder: (_) => const NunuaSalioScreen()));
+    }
+  },
+  {
+    "image": null,
+    "secondary": "assets/images/dstvlogo.jpeg",
+    "icon": Icon(Icons.handshake_outlined, color: Colors.red, size: 30),
+    "name": "Nunua Salio",
+    "badge": false,
+    "tap": () {
+      NavigationService.instance.navigateToRoute(
+          MaterialPageRoute(builder: (_) => const VochaYaKuKwanguaScreen()));
+    }
+  },
+  {
+    "image": null,
+    "secondary": "assets/images/dstvlogo.jpeg",
+    "icon": Icon(Icons.handshake_outlined, color: Colors.red, size: 30),
+    "name": "Hamisha Pesa",
+    "badge": false
+  },
+];
+
 List<Map> kwendaBenki = [
   {
     "name": "ACB",
