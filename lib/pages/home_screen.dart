@@ -14,6 +14,14 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final List<String> image = [
+    'assets/images/airtel1.png',
+    'assets/images/airtel2.png',
+    'assets/images/airtel3.png',
+    'assets/images/airtel4.png',
+    'assets/images/airtel5.png'
+  ];
+
   _appBar(height) => PreferredSize(
       preferredSize: Size(MediaQuery.of(context).size.width, height + 300),
       child: TopPart(height: height));
@@ -53,9 +61,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: ListView.builder(
                         shrinkWrap: true,
                         scrollDirection: Axis.horizontal,
-                        itemCount: 4,
-                        itemBuilder: (context, inde) {
-                          return PromoBox();
+                        itemCount: image.length,
+                        itemBuilder: (context, index) {
+                          return PromoBox(
+                            imageUrl: image[index],
+                          );
                         }),
                   ),
                   SizedBox(height: 10.h),
@@ -242,7 +252,11 @@ class MySliverAppBar extends StatelessWidget {
 }
 
 class PromoBox extends StatelessWidget {
-  const PromoBox({super.key});
+  final String imageUrl;
+  const PromoBox({
+    Key? key,
+    required this.imageUrl,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -255,8 +269,8 @@ class PromoBox extends StatelessWidget {
             borderRadius: BorderRadius.circular(5.0),
             color: Theme.of(context).primaryColor,
             image: DecorationImage(
-                image: NetworkImage(
-                  'https://images.unsplash.com/photo-1614167156117-c02f3f9f3088?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80',
+                image: AssetImage(
+                  imageUrl,
                 ),
                 fit: BoxFit.cover)),
       ),

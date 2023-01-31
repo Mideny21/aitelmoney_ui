@@ -14,6 +14,13 @@ class AirtelMoneyScreen extends StatefulWidget {
 }
 
 class _AirtelMoneyScreenState extends State<AirtelMoneyScreen> {
+  final List<String> airtelMoneyimage = [
+    'assets/images/airtel4.png',
+    'assets/images/airtel2.png',
+    'assets/images/airtel3.png',
+    'assets/images/airtel1.png',
+    'assets/images/airtel5.png'
+  ];
   _appBar(height) => PreferredSize(
       preferredSize: Size(MediaQuery.of(context).size.width, height + 300),
       child: AirtelMoneyTopPart(height: height));
@@ -65,9 +72,11 @@ class _AirtelMoneyScreenState extends State<AirtelMoneyScreen> {
                     child: ListView.builder(
                         shrinkWrap: true,
                         scrollDirection: Axis.horizontal,
-                        itemCount: 4,
-                        itemBuilder: (context, inde) {
-                          return PromoBox();
+                        itemCount: airtelMoneyimage.length,
+                        itemBuilder: (context, index) {
+                          return PromoBox(
+                            imageUrl: airtelMoneyimage[index],
+                          );
                         }),
                   ),
                   SizedBox(height: 10.h),
@@ -76,9 +85,11 @@ class _AirtelMoneyScreenState extends State<AirtelMoneyScreen> {
                     child: ListView.builder(
                         shrinkWrap: true,
                         scrollDirection: Axis.horizontal,
-                        itemCount: 4,
-                        itemBuilder: (context, inde) {
-                          return PromoBox();
+                        itemCount: airtelMoneyimage.length,
+                        itemBuilder: (context, index) {
+                          return PromoBox(
+                            imageUrl: airtelMoneyimage[index],
+                          );
                         }),
                   ),
                 ],
