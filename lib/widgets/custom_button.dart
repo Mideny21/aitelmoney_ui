@@ -22,8 +22,8 @@ class CustomButton extends StatelessWidget {
     this.height = 48,
     this.width = double.maxFinite,
     this.fontSize = 16,
-    this.textColor = Colors.blueGrey,
-    this.color = AppColors.yellowColors,
+    this.textColor = Colors.white,
+    this.color = AppColors.activeButtonColors,
   }) : super(key: key);
 
   @override

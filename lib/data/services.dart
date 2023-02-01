@@ -232,101 +232,95 @@ List<Map> zaidiItems = [
   {
     "name": "Airtel Shops",
     "icon":
-        Icon(Icons.shopping_basket, color: AppColors.blueColor, size: 30.sp),
+        Icon(Icons.houseboat_outlined, color: AppColors.blueColor, size: 30.sp),
   },
   {
     "name": "Help & Support",
-    "icon":
-        Icon(Icons.shopping_basket, color: AppColors.blueColor, size: 30.sp),
+    "icon": Icon(Icons.help_center_outlined,
+        color: AppColors.blueColor, size: 30.sp),
   },
   {
     "name": "Terms & Conditions",
     "icon":
-        Icon(Icons.shopping_basket, color: AppColors.blueColor, size: 30.sp),
+        Icon(Icons.receipt_outlined, color: AppColors.blueColor, size: 30.sp),
   },
   {
     "name": "About Us",
-    "icon":
-        Icon(Icons.shopping_basket, color: AppColors.blueColor, size: 30.sp),
+    "icon": Icon(Icons.info_outline, color: AppColors.blueColor, size: 30.sp),
   },
   {
     "name": "Share the app",
     "icon": Icon(Icons.share_outlined, color: AppColors.blueColor, size: 30.sp),
-  },
-  {
-    "name": "Setting",
-    "icon":
-        Icon(Icons.shopping_basket, color: AppColors.blueColor, size: 30.sp),
   },
 ];
 
 List<Map> lipiaBili = [
   {
     "name": "Hifadhi Kumbukumbu",
-    "icon": Icon(Icons.shopping_basket, color: Colors.red, size: 45),
+    "icon": Icon(Icons.star, color: Colors.red, size: 30),
     "image": "assets/images/visatigo.png"
   },
   {
     "name": "Ingiza Namba ya Biashara",
-    "icon": Icon(Icons.shopping_basket, color: Colors.red, size: 45),
+    "icon": Icon(Icons.more_vert_outlined, color: Colors.red, size: 30),
   },
   {
     "name": "Chagua Biashara",
-    "icon": Icon(Icons.shopping_basket, color: Colors.red, size: 45),
+    "icon": Icon(Icons.house_outlined, color: Colors.red, size: 30),
     "image": null
   },
   {
     "name": "Umeme Na Nishati",
-    "icon": Icon(Icons.shopping_basket, color: Colors.red, size: 45),
+    "icon": Icon(Icons.water_drop_outlined, color: Colors.red, size: 30),
     "image": null
   },
   {
     "name": "Maji (DAWASCO)",
-    "icon": Icon(Icons.shopping_basket, color: Colors.red, size: 45),
+    "icon": Icon(Icons.water_drop_outlined, color: Colors.red, size: 30),
     "image": null
   },
   {
     "name": "Pay Tv",
-    "icon": Icon(Icons.shopping_basket, color: Colors.red, size: 45),
+    "icon": Icon(Icons.live_tv_outlined, color: Colors.red, size: 30),
     "image": null
   },
   {
     "name": "Malipo Ya Serikali",
-    "icon": Icon(Icons.shopping_basket, color: Colors.red, size: 45),
+    "icon": Icon(Icons.mosque_outlined, color: Colors.red, size: 30),
     "image": null
   },
   {
     "name": "Huduma za Elimu",
-    "icon": Icon(Icons.shopping_basket, color: Colors.red, size: 45),
+    "icon": Icon(Icons.receipt_outlined, color: Colors.red, size: 30),
   },
   {
     "name": "School Fees",
-    "icon": Icon(Icons.shopping_basket, color: Colors.red, size: 45),
+    "icon": Icon(Icons.receipt_outlined, color: Colors.red, size: 30),
     "image": null
   },
   {
     "name": "Usafiri wa Anga",
-    "icon": Icon(Icons.shopping_basket, color: Colors.red, size: 45),
+    "icon": Icon(Icons.airplanemode_on_outlined, color: Colors.red, size: 30),
     "image": null
   },
   {
     "name": "Bahati na Sibu & Michezo",
-    "icon": Icon(Icons.shopping_basket, color: Colors.red, size: 45),
+    "icon": Icon(Icons.shopping_basket, color: Colors.red, size: 30),
     "image": null
   },
   {
     "name": "US Visa",
-    "icon": Icon(Icons.shopping_basket, color: Colors.red, size: 45),
+    "icon": Icon(Icons.receipt_long_outlined, color: Colors.red, size: 30),
     "image": null
   },
   {
     "name": "Wakala wa Vocha",
-    "icon": Icon(Icons.shopping_basket, color: Colors.red, size: 45),
+    "icon": Icon(Icons.group_outlined, color: Colors.red, size: 30),
     "image": null
   },
   {
     "name": "Postpaid",
-    "icon": Icon(Icons.shopping_basket, color: Colors.red, size: 45),
+    "icon": Icon(Icons.phone_android_rounded, color: Colors.red, size: 30),
   },
 ];
 

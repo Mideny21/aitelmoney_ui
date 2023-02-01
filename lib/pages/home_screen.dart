@@ -81,16 +81,27 @@ class _HomeScreenState extends State<HomeScreen> {
                       Row(
                         children: [
                           CircleAvatar(
-                            radius: 15,
-                            backgroundColor: AppColors.gradientColor5,
+                            radius: 18,
+                            backgroundColor: Colors.purple,
                             child: Icon(
-                              Icons.tab,
+                              Icons.sell,
+                              size: 16.sp,
+                              color: Colors.white,
                             ),
                           ),
-                          SizedBox(width: 5.w),
+                          SizedBox(width: 8.w),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [Text('245 MB'), Text('Ukomo 1 Day')],
+                            children: [
+                              Text(
+                                '245 MB',
+                                style: TextStyle(fontWeight: FontWeight.w500),
+                              ),
+                              Text(
+                                'Ukomo 1 Day',
+                                style: TextStyle(fontWeight: FontWeight.w400),
+                              )
+                            ],
                           )
                         ],
                       ),
@@ -208,11 +219,13 @@ class MoreDetails extends StatelessWidget {
   final String title1;
   final String title2;
   final Color? color;
+  final Color? secondColor;
   const MoreDetails({
     Key? key,
     required this.title1,
     required this.title2,
     this.color,
+    this.secondColor,
   }) : super(key: key);
 
   @override
@@ -232,7 +245,7 @@ class MoreDetails extends StatelessWidget {
           title2,
           style: TextStyle(
               fontWeight: FontWeight.w500,
-              color: AppColors.blueColor,
+              color: secondColor ?? AppColors.blueColor,
               fontSize: 12.sp),
         ),
       ],

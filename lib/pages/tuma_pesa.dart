@@ -184,81 +184,111 @@ class KweBenki extends StatelessWidget {
   }
 }
 
-class NdaniYaNchi extends StatelessWidget {
+class NdaniYaNchi extends StatefulWidget {
   const NdaniYaNchi({
     Key? key,
   }) : super(key: key);
 
   @override
+  State<NdaniYaNchi> createState() => _NdaniYaNchiState();
+}
+
+class _NdaniYaNchiState extends State<NdaniYaNchi> {
+  late TextEditingController? _fieldController;
+  bool enableSignIn = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _fieldController = TextEditingController();
+
+    _fieldController?.addListener(() {
+      setState(() {
+        enableSignIn = (_fieldController?.text.isNotEmpty ?? false);
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _fieldController?.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const Text('MAELEZO YA MPOKEAJI'),
-        SizedBox(height: 8),
-        SizedBox(
-          width: double.infinity,
-          height: MediaQuery.of(context).size.height * 0.42,
-          child: Card(
-              elevation: 5,
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          border: Border.all(color: Colors.grey),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              InputForm(
-                                title: 'Jina la Mpokeaji au Namba',
-                                hintText: 'Weka jina la Mpokeaji au Namba',
-                              ),
-                              SizedBox(height: 10),
-                              InputForm(
-                                title: 'Ingiza kiasi',
-                                hintText: 'Weka jina la Mpokeaji au Namba',
-                              ),
-                            ],
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text('MAELEZO YA MPOKEAJI'),
+          SizedBox(height: 8),
+          SizedBox(
+            width: double.infinity,
+            height: MediaQuery.of(context).size.height * 0.42,
+            child: Card(
+                elevation: 5,
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            border: Border.all(color: Colors.grey),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(12.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                InputForm(
+                                  title: 'Jina la Mpokeaji au Namba',
+                                  hintText: 'Weka jina la Mpokeaji au Namba',
+                                ),
+                                SizedBox(height: 10),
+                                InputForm(
+                                  title: 'Ingiza kiasi',
+                                  hintText: 'Weka jina la Mpokeaji au Namba',
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                      SizedBox(height: 15),
-                      InputForm(
-                        title: 'maoni_ya hiari (Si Lazima)',
-                        hintText: 'Ingiza maoni',
-                      ),
-                      SizedBox(height: 15),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              Icon(Icons.arrow_back),
-                              Text("Rudi Nyuma")
-                            ],
-                          ),
-                          CustomButton(
-                            height: 40,
-                            tap: () {},
-                            text: 'Endelea',
-                            width: 80,
-                            textColor: Colors.white,
-                            color: AppColors.activeButtonColors,
-                          )
-                        ],
-                      )
-                    ]),
-              )),
-        ),
-      ],
+                        SizedBox(height: 15),
+                        InputForm(
+                          controller: _fieldController,
+                          title: 'maoni_ya hiari (Si Lazima)',
+                          hintText: 'Ingiza maoni',
+                        ),
+                        SizedBox(height: 15),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                Icon(Icons.arrow_back),
+                                Text("Rudi Nyuma")
+                              ],
+                            ),
+                            CustomButton(
+                              height: 40,
+                              tap: () => enableSignIn ? () {} : null,
+                              isEnabled: enableSignIn,
+                              text: 'Endelea',
+                              width: 80,
+                              textColor: Colors.white,
+                              color: AppColors.activeButtonColors,
+                            )
+                          ],
+                        )
+                      ]),
+                )),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -270,61 +300,63 @@ class NjeYaNchi extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const Text('TUMA PESA NJE YA NCHI'),
-        const SizedBox(height: 8),
-        SizedBox(
-          width: double.infinity,
-          height: MediaQuery.of(context).size.height * 0.42,
-          child: Card(
-              elevation: 5,
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      InputForm(
-                        title: 'Weka jina la Mpokeaji au Namba',
-                        hintText: 'Weka jina la Mpokeaji....',
-                      ),
-                      SizedBox(height: 15),
-                      InputForm(
-                        title: 'Ingiza Jina',
-                        hintText: 'Jina',
-                      ),
-                      SizedBox(height: 15),
-                      InputForm(
-                        title: 'Ingiza Kiasi',
-                        hintText: 'TZS',
-                        redColor: true,
-                      ),
-                      SizedBox(height: 15),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              Icon(Icons.arrow_back),
-                              Text("Rudi Nyuma")
-                            ],
-                          ),
-                          CustomButton(
-                            height: 40,
-                            tap: () {},
-                            text: 'Endelea',
-                            width: 80,
-                            textColor: Colors.white,
-                            color: Colors.red,
-                          )
-                        ],
-                      )
-                    ]),
-              )),
-        ),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text('TUMA PESA NJE YA NCHI'),
+          const SizedBox(height: 8),
+          SizedBox(
+            width: double.infinity,
+            height: MediaQuery.of(context).size.height * 0.42,
+            child: Card(
+                elevation: 5,
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        InputForm(
+                          title: 'Weka jina la Mpokeaji au Namba',
+                          hintText: 'Weka jina la Mpokeaji....',
+                        ),
+                        SizedBox(height: 15),
+                        InputForm(
+                          title: 'Ingiza Jina',
+                          hintText: 'Jina',
+                        ),
+                        SizedBox(height: 15),
+                        InputForm(
+                          title: 'Ingiza Kiasi',
+                          hintText: 'TZS',
+                          redColor: true,
+                        ),
+                        SizedBox(height: 15),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                Icon(Icons.arrow_back),
+                                Text("Rudi Nyuma")
+                              ],
+                            ),
+                            CustomButton(
+                              height: 40,
+                              tap: () {},
+                              text: 'Endelea',
+                              width: 80,
+                              textColor: Colors.white,
+                              color: Colors.red,
+                            )
+                          ],
+                        )
+                      ]),
+                )),
+          ),
+        ],
+      ),
     );
   }
 }

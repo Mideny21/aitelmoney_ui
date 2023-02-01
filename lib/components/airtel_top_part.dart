@@ -78,7 +78,7 @@ class AirtelMoneyTopPart extends StatelessWidget {
                                       Row(
                                         children: [
                                           Text(
-                                            "JOHN",
+                                            "JOHNY",
                                             style: TextStyle(
                                                 fontSize: 13.sp,
                                                 color: Colors.black,
@@ -86,8 +86,8 @@ class AirtelMoneyTopPart extends StatelessWidget {
                                           ),
                                           VerticalLine(
                                             height: 12.h,
-                                            color: Colors.black,
-                                            width: 2.w,
+                                            color: Colors.grey,
+                                            width: 1.w,
                                             padding: EdgeInsets.symmetric(
                                                     horizontal: 3, vertical: 3)
                                                 .r,

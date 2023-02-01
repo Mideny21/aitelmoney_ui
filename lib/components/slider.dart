@@ -13,11 +13,9 @@ class AdvertisementPanel extends StatefulWidget {
 
 class _AdvertisementPanelState extends State<AdvertisementPanel> {
   final advertisements = [
-    'assets/images/airtel1.png',
-    'assets/images/airtel2.png',
-    'assets/images/airtel3.png',
-    'assets/images/airtel4.png',
-    'assets/images/airtel5.png'
+    'assets/images/niger8.jpg',
+    'assets/images/niger7.jpg',
+    'assets/images/niger6.jpeg',
   ];
 
   final _pagecontroller = PageController();

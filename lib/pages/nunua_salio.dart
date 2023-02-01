@@ -26,10 +26,36 @@ class _NunuaSalioScreenState extends State<NunuaSalioScreen> {
   }
 }
 
-class NunuaSalioWidgets extends StatelessWidget {
+class NunuaSalioWidgets extends StatefulWidget {
   const NunuaSalioWidgets({
     Key? key,
   }) : super(key: key);
+
+  @override
+  State<NunuaSalioWidgets> createState() => _NunuaSalioWidgetsState();
+}
+
+class _NunuaSalioWidgetsState extends State<NunuaSalioWidgets> {
+  late TextEditingController? _fieldController;
+  bool enableSignIn = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _fieldController = TextEditingController();
+
+    _fieldController?.addListener(() {
+      setState(() {
+        enableSignIn = (_fieldController?.text.isNotEmpty ?? false);
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _fieldController?.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +77,7 @@ class NunuaSalioWidgets extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         InputForm(
+                          controller: _fieldController,
                           title: 'Jina la Mpokeaji au Namba',
                           hintText: '',
                           sufficon: true,
@@ -60,12 +87,11 @@ class NunuaSalioWidgets extends StatelessWidget {
                         Align(
                           alignment: Alignment.bottomRight,
                           child: CustomButton(
+                            tap: () => enableSignIn ? () {} : null,
+                            isEnabled: enableSignIn,
                             height: 40,
-                            tap: () {},
                             text: 'Endelea',
-                            width: 80,
-                            textColor: Colors.white,
-                            color: Colors.blueGrey.shade800,
+                            width: MediaQuery.of(context).size.width * 0.3,
                           ),
                         )
                       ]),

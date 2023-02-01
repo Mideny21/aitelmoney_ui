@@ -1,4 +1,5 @@
 import 'package:airtelmoney_ui/components/airtelMoney_service.dart';
+import 'package:airtelmoney_ui/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -80,18 +81,105 @@ class _AirtelMoneyScreenState extends State<AirtelMoneyScreen> {
                         }),
                   ),
                   SizedBox(height: 10.h),
-                  SizedBox(
-                    height: 125,
-                    child: ListView.builder(
-                        shrinkWrap: true,
-                        scrollDirection: Axis.horizontal,
-                        itemCount: airtelMoneyimage.length,
-                        itemBuilder: (context, index) {
-                          return PromoBox(
-                            imageUrl: airtelMoneyimage[index],
-                          );
-                        }),
+                  MoreDetails(
+                    title1: 'OFA MAALUMU',
+                    title2: 'OFA Zote',
+                    color: AppColors.primaryColor,
                   ),
+                  SizedBox(height: 10.h),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          CircleAvatar(
+                            radius: 18,
+                            backgroundColor: Colors.purple,
+                            child: Icon(
+                              Icons.sell,
+                              size: 16.sp,
+                              color: Colors.white,
+                            ),
+                          ),
+                          SizedBox(width: 8.w),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                '245 MB',
+                                style: TextStyle(fontWeight: FontWeight.w500),
+                              ),
+                              Text(
+                                'Ukomo 1 Day',
+                                style: TextStyle(fontWeight: FontWeight.w400),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                      RichText(
+                          text: TextSpan(
+                              style: TextStyle(
+                                  letterSpacing: 1,
+                                  color: AppColors.primaryColor,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 12.sp),
+                              children: [
+                            TextSpan(
+                                text: 'TZS ',
+                                style: TextStyle(fontSize: 12.sp)),
+                            TextSpan(
+                                text: '500',
+                                style: TextStyle(
+                                    fontSize: 12.sp,
+                                    letterSpacing: 0.5,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.black)),
+                          ]))
+                    ],
+                  ),
+                  SizedBox(height: 10.h),
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Expanded(
+                          child: Container(
+                            height: 60.h,
+                            decoration: BoxDecoration(
+                                color: Colors.green,
+                                borderRadius: BorderRadius.circular(8),
+                                shape: BoxShape.rectangle),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                      horizontal: 8.0, vertical: 8)
+                                  .r,
+                              child: OfferBoxes(
+                                title: 'Kuhusu Huduma Pendwa',
+                                icon: Icons.star_border_sharp,
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 5.w),
+                        Expanded(
+                          child: Container(
+                            height: 60.h,
+                            decoration: BoxDecoration(
+                                color: Colors.blue,
+                                borderRadius: BorderRadius.circular(8),
+                                shape: BoxShape.rectangle),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                      horizontal: 8.0, vertical: 8)
+                                  .r,
+                              child: OfferBoxes(
+                                title: 'Angalia TV',
+                                icon: Icons.tv,
+                              ),
+                            ),
+                          ),
+                        )
+                      ]),
                 ],
               )
             ]),

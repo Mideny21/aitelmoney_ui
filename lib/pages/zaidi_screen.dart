@@ -39,11 +39,8 @@ class _ZaidiScreenState extends State<ZaidiScreen> {
                 children: [
                   CircleAvatar(
                     radius: 35,
-                    backgroundColor: AppColors.gradientColor5,
-                    child: Icon(
-                      Icons.person,
-                      size: 45,
-                    ),
+                    backgroundColor: Colors.green,
+                    child: Icon(Icons.person, color: Colors.white, size: 45.sp),
                   ),
                   SizedBox(height: 5.h),
                   Text(

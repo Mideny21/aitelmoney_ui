@@ -6,6 +6,7 @@ class TabsSection extends StatefulWidget {
   final List<IconData> icon;
   final List<String> title;
   final double? fontsize;
+  final double? iconSize;
 
   const TabsSection({
     Key? key,
@@ -13,6 +14,7 @@ class TabsSection extends StatefulWidget {
     required this.icon,
     required this.title,
     this.fontsize,
+    this.iconSize,
   }) : super(key: key);
 
   @override
@@ -65,8 +67,9 @@ class _TabsSectionState extends State<TabsSection> {
                     Icon(
                       widget.icon[0],
                       color: Colors.grey,
+                      size: widget.iconSize ?? 30.sp,
                     ),
-                    SizedBox(height: 10.h),
+                    // SizedBox(height: 10.h),
                     Padding(
                       padding: const EdgeInsets.all(5.0).r,
                       child: Text(
@@ -107,8 +110,8 @@ class _TabsSectionState extends State<TabsSection> {
               Icon(
                 widget.icon[1],
                 color: Colors.grey,
+                size: widget.iconSize ?? 30.sp,
               ),
-              SizedBox(height: 10.h),
               Padding(
                 padding: const EdgeInsets.all(5.0).r,
                 child: Text(

@@ -1,8 +1,8 @@
-import 'package:airtelmoney_ui/utils/colors.dart';
 import 'package:flutter/material.dart';
-
-import 'package:airtelmoney_ui/widgets/top_tabs.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'package:airtelmoney_ui/utils/colors.dart';
+import 'package:airtelmoney_ui/widgets/top_tabs.dart';
 
 import '../widgets/custom_button.dart';
 
@@ -58,7 +58,7 @@ class _ToaPesaScreenState extends State<ToaPesaScreen>
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           TabsSection(
               fontsize: 10.sp,
-              icon: [Icons.earbuds, Icons.wallet_travel],
+              icon: [Icons.headphones, Icons.receipt_long],
               title: ['Kutoka kwa Wakala', 'Kutoka kwa ATM'],
               controller: _toaController),
           SizedBox(height: 10.h),
@@ -128,10 +128,36 @@ class ListZahuduma extends StatelessWidget {
   }
 }
 
-class AgentScreen extends StatelessWidget {
+class AgentScreen extends StatefulWidget {
   const AgentScreen({
     Key? key,
   }) : super(key: key);
+
+  @override
+  State<AgentScreen> createState() => _AgentScreenState();
+}
+
+class _AgentScreenState extends State<AgentScreen> {
+  late TextEditingController? _fieldController;
+  bool enableSignIn = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _fieldController = TextEditingController();
+
+    _fieldController?.addListener(() {
+      setState(() {
+        enableSignIn = (_fieldController?.text.isNotEmpty ?? false);
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _fieldController?.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -151,18 +177,18 @@ class AgentScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       InputFormToa(
+                        controller: _fieldController,
                         title: 'Ingiza Kodi ya wakala kwa makini',
                         hintText: 'Enter Agent Code',
                       ),
                       SizedBox(height: 15),
                       CustomButton(
+                        tap: () => enableSignIn ? () {} : null,
+                        isEnabled: enableSignIn,
                         height: 40,
-                        tap: () {},
-                        text: 'Endelea',
-                        width: 80,
-                        textColor: Colors.white,
-                        color: Colors.red,
-                      )
+                        text: 'Inayofuata',
+                        width: MediaQuery.of(context).size.width * 0.3,
+                      ),
                     ]),
               )),
         ),
@@ -173,10 +199,12 @@ class AgentScreen extends StatelessWidget {
 
 class InputFormToa extends StatelessWidget {
   final String title;
+  final TextEditingController? controller;
   final String hintText;
   const InputFormToa({
     Key? key,
     required this.title,
+    this.controller,
     required this.hintText,
   }) : super(key: key);
 
@@ -186,6 +214,7 @@ class InputFormToa extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TextField(
+          controller: controller,
           decoration: InputDecoration(hintText: hintText),
         ),
         SizedBox(
