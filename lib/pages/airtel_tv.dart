@@ -42,8 +42,8 @@ class _AirtelTVScreenState extends State<AirtelTVScreen> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        toolbarHeight: 60.h,
-        backgroundColor: Colors.black,
+        toolbarHeight: 50.h,
+        backgroundColor: Color(0xff141414),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -56,7 +56,7 @@ class _AirtelTVScreenState extends State<AirtelTVScreen> {
               backgroundColor: Colors.red,
               radius: 18,
               child: Icon(
-                Icons.tv_rounded,
+                Icons.live_tv_outlined,
                 color: Colors.white,
               ),
             ),
